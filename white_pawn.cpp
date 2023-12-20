@@ -4,7 +4,11 @@
 #include "white_pawn.hpp"
 #include <string>
 using namespace std;
-void white_pawn:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the white pawn's position on the board
+    white_pawn:: white_pawn()
+    {
+
+    }
+    void white_pawn:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the white pawn's position on the board
     {   if(once==true)
         {
             SDL_RenderCopy(gRenderer, assets, &White_Pawn.srcRect, &White_Pawn.moverRect);
@@ -17,8 +21,8 @@ void white_pawn:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int nu
         }
     }
     // Handles movement logic for the white pawn based on selected coordinates
-void white_pawn::move(int x,int y,int selected_x,int selected_y) 
-     {
+    void white_pawn::move(int x,int y,int selected_x,int selected_y) 
+    {
         if( first_move_white == false and x>selected_x-20 and x<selected_x+20 and y<selected_y+140 and y>selected_y-25  )
         {           // Moves the pawn two squares forward on its first move
 
@@ -47,25 +51,28 @@ void white_pawn::move(int x,int y,int selected_x,int selected_y)
             White_Pawn.moverRect.y = y;
             
         }   
-     }
-  void white_pawn:: setFirstMove(bool first) // Sets the first move flag for the white pawn
-     {
+    }
+    void white_pawn:: setFirstMove(bool first) // Sets the first move flag for the white pawn
+    {
         first_move_white = first;
-     }
-      string white_pawn:: getType()  {return "Pawn_White";} // Retrieves the type of the piece
-      int  white_pawn::getPlacedX () // Retrieves the X coordinate of the piece on the board
-     {
-            return White_Pawn.moverRect.x;
-     }
-      int  white_pawn::getPlacedY() // Retrieves the Y coordinate of the piece on the board
-     {
-            return White_Pawn.moverRect.y;
-     }
-      bool white_pawn:: is_black() // Checks if the piece is black
-     {
-            return false;
-     }
-     bool white_pawn:: get_enabled()// Retrieves the enabled status of the piece
+    }
+    string white_pawn:: getType() // Retrieves the type of the piece
+    {
+        return "Pawn_White";
+    } 
+    int  white_pawn::getPlacedX () // Retrieves the X coordinate of the piece on the board
+    {
+        return White_Pawn.moverRect.x;
+    }
+    int  white_pawn::getPlacedY() // Retrieves the Y coordinate of the piece on the board
+    {
+        return White_Pawn.moverRect.y;
+    }
+    bool white_pawn:: is_black() // Checks if the piece is black
+    {
+        return false;
+    }
+    bool white_pawn:: get_enabled()// Retrieves the enabled status of the piece
     {
         return enabled;
     }
@@ -73,4 +80,7 @@ void white_pawn::move(int x,int y,int selected_x,int selected_y)
     {
         enabled = enabled_in;
     }
-    white_pawn:: ~white_pawn(){}// Destructor for the white_pawn class
+    white_pawn:: ~white_pawn()
+    {
+      // Destructor for the white_pawn class  
+    }

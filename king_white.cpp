@@ -4,6 +4,10 @@
 #include "king_white.hpp"
 #include <string>
 using namespace std;    
+    king_white:: king_white()
+    {
+        //Default constrcutor
+    }
     void king_white:: setFirstMove(bool first){}
     void king_white:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the black king's position and appearance on the chessboard
     {
@@ -11,7 +15,7 @@ using namespace std;
     }
      void king_white:: move(int x,int y,int selected_x,int selected_y) // Moves the black king on the chessboard based on selected coordinates
      
-     {
+    {
         if( x>selected_x-20 and x<selected_x+20   and y>selected_y-80 and y<selected_y  )// Condition: Moves the king one square up
         {   
     
@@ -53,21 +57,24 @@ using namespace std;
             White_King.moverRect.x = x;
             White_King.moverRect.y = y;
         }
-     }
-     string king_white:: getType(){return "King_White";}
-     int king_white:: getPlacedX()
-    {
-    return  White_King.moverRect.x;
     }
-     int king_white:: getPlacedY()
+    string king_white:: getType()
     {
-    return  White_King.moverRect.y;
+        return "King_White";
     }
-     bool king_white:: is_black()
+    int king_white:: getPlacedX()
     {
-    return false;
+        return  White_King.moverRect.x;
+    }
+    int king_white:: getPlacedY()
+    {
+        return  White_King.moverRect.y;
+    }
+    bool king_white:: is_black()
+    {
+        return false;
     }   
-     bool king_white:: get_enabled()
+    bool king_white:: get_enabled()
     {
         return enabled;
     }
@@ -75,4 +82,7 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    king_white:: ~king_white(){}
+    king_white:: ~king_white()
+    {
+        //Destructor
+    }

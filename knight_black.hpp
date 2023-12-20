@@ -11,6 +11,7 @@ class knight_black : public chess_piece
     bool once=false;// Tracks if the knight has moved before.
     bool enabled=true;// Indicates if the knight is currently enabled.
     public:
+    knight_black();//Default constructor to cater ro3
     // Function declarations
     virtual void setFirstMove(bool first);
     virtual void initializer(SDL_Renderer* gRenderer,SDL_Texture* assets, int num) override;
@@ -22,4 +23,7 @@ class knight_black : public chess_piece
     virtual bool get_enabled();
     virtual void set_enabled(bool enabled_in);
     virtual ~knight_black(); //Virtual Destructor
+    //Rule of three
+    knight_black(const knight_black& obj) = delete;
+    knight_black& operator = (const knight_black& obj) = delete;
 };

@@ -4,6 +4,10 @@
 #include "Bishop_black.hpp"
 #include <string>
 using namespace std;
+    Bishop_black:: Bishop_black()
+    {
+
+    }
     void Bishop_black:: setFirstMove(bool first){}// Implementation of the setFirstMove method
     void Bishop_black:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) 
     {   // Method to initialize the black bishop
@@ -64,5 +68,8 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    Bishop_black:: ~Bishop_black(){} // Destructor for the Bishop_black class
+    Bishop_black:: ~Bishop_black() // Destructor for the Bishop_black class
+    {
+
+    } 
     

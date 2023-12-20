@@ -3,7 +3,11 @@
 #include <cmath>
 #include "king_black.hpp"
 #include <string>
-using namespace std;    
+using namespace std;  
+    king_black:: king_black()
+    {
+        // Default constructor
+    };
     void king_black:: setFirstMove(bool first){}
     void king_black:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the black king's position and appearance on the chessboard
     {
@@ -54,7 +58,10 @@ using namespace std;
             Black_King.moverRect.y = y;
         }
      }
-    string king_black:: getType(){return "King_Black";}// Returns the type of the chess piece (King_Black)
+    string king_black:: getType() // Returns the type of the chess piece (King_Black)
+    {
+        return "King_Black";
+    }
     int king_black:: getPlacedX()// Gets the X position of the black king on the chessboard
     {
     return Black_King.moverRect.x;
@@ -75,4 +82,7 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    king_black:: ~king_black(){}//Destructor
+    king_black:: ~king_black()
+    {
+        //Destructor
+    }

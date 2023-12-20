@@ -5,7 +5,10 @@
 #include <string>
 using namespace std;
 // Implementation of the functions for the black pawn class
-
+    Pawn_black:: Pawn_black()
+    {
+        //Default constructor
+    }
     void Pawn_black:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the black pawn's position and appearance on the chessboard
     {   if(once==true)
         {
@@ -80,5 +83,8 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    Pawn_black:: ~Pawn_black(){} // Destructor for the Pawn_black class
+    Pawn_black:: ~Pawn_black()
+    {
+        // Destructor for the Pawn_black class
+    } 
     

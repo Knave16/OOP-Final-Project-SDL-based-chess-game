@@ -13,6 +13,7 @@ class Pawn_black : public chess_piece
     bool first_move = false;
     bool enabled = true;
     public:
+    Pawn_black(); // Default constructor to cater ro3
     // Overridden functions from the base class
     virtual void initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) override;
     virtual void move(int x,int y,int selected_x,int selected_y) override;
@@ -24,4 +25,7 @@ class Pawn_black : public chess_piece
     virtual bool get_enabled();
     virtual void set_enabled(bool enabled_in);
     virtual ~Pawn_black();//  Virtual destructor
+    //Rule of three
+    Pawn_black(const Pawn_black& obj) = delete;
+    Pawn_black& operator = (const Pawn_black& obj) = delete;
 };

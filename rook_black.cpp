@@ -4,6 +4,10 @@
 #include "rook_black.hpp"
 #include <string>
 using namespace std;
+    rook_black:: rook_black()
+    {
+
+    }
     void rook_black:: setFirstMove(bool first){}// Initializes the rook's first move
     // Initializes the rook's position on the board based on given coordinates
     void rook_black::  initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) 
@@ -28,7 +32,7 @@ using namespace std;
         }
     }
     void rook_black::  move(int x,int y,int selected_x,int selected_y) // Handles the rook's movement logic based on selected coordinates
-     {
+    {
         if( x>selected_x-20 and x<selected_x+20    )
         {   
             Black_rook.moverRect.x = x;
@@ -39,20 +43,20 @@ using namespace std;
             Black_rook.moverRect.x = x;
             Black_rook.moverRect.y = y; 
         }
-     }
+    }
     string rook_black::  getType(){return "Rook_Black";}// Returns the type of the piece
     int rook_black::  getPlacedX()// Returns the X coordinate of the piece
-     {
+    {
         return Black_rook.moverRect.x;
-     }
+    }
     int rook_black::  getPlacedY()// Returns the y coordinate of the piece
-     {
+    {
         return Black_rook.moverRect.y;
-     }
+    }
     bool rook_black::  is_black()// Checks if the piece is black
-     {
+    {
         return true;
-     }
+    }
     bool rook_black::  get_enabled()// Gets the enabled status of the piece
     {
         return enabled;
@@ -61,4 +65,7 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    rook_black:: ~rook_black(){}// Destructor for the rook
+    rook_black:: ~rook_black()
+    {
+        // Destructor for the rook
+    }

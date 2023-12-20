@@ -3,7 +3,11 @@
 #include <cmath>
 #include "knight_black.hpp"
 #include <string>
-using namespace std;   
+using namespace std;
+    knight_black:: knight_black()
+    {
+
+    }
     void knight_black:: setFirstMove(bool first){}//Set the first move for the black knight
     void knight_black:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets, int num) //Initialize the black knight's position on the chessboard
     // - gRenderer: SDL renderer for rendering graphics
@@ -33,7 +37,7 @@ using namespace std;
         }
     }
     void knight_black:: move(int x,int y,int selected_x,int selected_y) 
-     {// Function: move
+    {// Function: move
     // Purpose: Move the black knight on the chessboard based on selected coordinates
     // - x, y: Current coordinates of the knight
     // - selected_x, selected_y: Selected coordinates to move the knight
@@ -55,23 +59,23 @@ using namespace std;
                 Black_Knight.moverRect.x = x;
                 Black_Knight.moverRect.y = y; 
         }
-     }
+    }
     string knight_black:: getType()
     {
         return "Black_Knight"; // Purpose: Return the type of the chess piece ("Black_Knight")
     }
     int knight_black:: getPlacedX()
-     {
+    {
         return Black_Knight.moverRect.x;// Purpose: Get the X-coordinate where the black knight is placed on the chessboard
-     }
+    }
     int knight_black:: getPlacedY()    // Purpose: Get the Y-coordinate where the black knight is placed on the chessboard
-     {
+    {
         return Black_Knight.moverRect.y;
-     }
+    }
     bool knight_black:: is_black()    // Purpose: Check if the piece is black (for black knight, it returns true)
-     {
+    {
         return true;
-     }
+    }
     bool knight_black:: get_enabled()//Get whether the black knight is enabled or not
     {
         return enabled;
@@ -80,4 +84,7 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    knight_black:: ~knight_black(){}// Destructor for the black knight
+    knight_black:: ~knight_black()
+    {
+        // Destructor for the black knight
+    }

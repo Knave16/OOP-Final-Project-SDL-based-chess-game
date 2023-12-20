@@ -1,5 +1,4 @@
 #include "game.hpp"
-
 int main(int argc, char *argv[]){
     Game game;// Instantiates the Game class
     srand(time(NULL));// Seeds the random number generator

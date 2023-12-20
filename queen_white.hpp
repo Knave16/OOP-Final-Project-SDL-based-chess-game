@@ -23,4 +23,7 @@ class queen_white: public chess_piece
     virtual bool get_enabled();
     virtual void set_enabled(bool enabled_in);
     virtual ~queen_white(); //Virtual Destructor
+    //Rule of three
+    queen_white(const queen_white& obj) = delete;
+    queen_white& operator = (const queen_white& obj) = delete;
 };

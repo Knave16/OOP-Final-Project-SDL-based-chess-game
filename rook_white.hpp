@@ -11,7 +11,9 @@ class rook_white:public chess_piece// Defines the white rook class inheriting fr
     bool once = false;// Flags if the rook has moved before
     bool enabled = true;// Indicates if the rook is enabled
     public:
-     // Functions that override the base class methods
+    
+    rook_white(); // Default constructor to cater ro3
+    // Functions that override the base class methods
     virtual void setFirstMove(bool first);
     virtual void initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) override;
     virtual void move(int x,int y,int selected_x,int selected_y) override;
@@ -22,4 +24,7 @@ class rook_white:public chess_piece// Defines the white rook class inheriting fr
     virtual bool get_enabled();
     virtual void set_enabled(bool enabled_in);
     virtual ~rook_white(); //Virtual Destructor
+    //Rule of three
+    rook_white(const rook_white& obj) = delete;
+    rook_white& operator = (const rook_white& obj) = delete;
 };

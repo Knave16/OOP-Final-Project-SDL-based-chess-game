@@ -13,6 +13,7 @@ class white_pawn : public chess_piece // Declaration of the white_pawn class inh
     bool enabled = true;    // Flag to control the enabled status of the white pawn
 
     public:
+    white_pawn();
     // Overrides for base class methods
     virtual void initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) override;
     virtual void move(int x,int y,int selected_x,int selected_y) override;// Handles movement logic for the white pawn based on selected coordinates
@@ -24,4 +25,7 @@ class white_pawn : public chess_piece // Declaration of the white_pawn class inh
     virtual bool get_enabled();    // Retrieves the enabled status of the piece
     virtual void set_enabled(bool enabled_in);// Sets the enabled status of the piece
     virtual ~white_pawn();//Virtual Destructor
+    //Rule of three
+    white_pawn(const white_pawn& obj) = delete;
+    white_pawn& operator = (const white_pawn& obj) = delete;
 };

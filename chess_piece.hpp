@@ -20,10 +20,12 @@ class chess_piece
     // virtual ~chess_piece(); //Virtual Destructor
     /* The virtual dtor is causing our game to crash hence I have commented it out.
     It crashes when you try to kill a piece.
-    Since the pieces are derived from this base class it also deletes the entire chess piece class causing it to crash
+    Since the pieces are derived from this base class it also deletes the entire chess piece class when a piece is killed causing it to crash
+    I even tried to do it with a pure virtual detructor but it was still not working
     You can comment this code out and test it yourself as well */
 };
 // Structure defining a unit (for rendering)
-struct Unit{
+struct Unit
+{
     SDL_Rect srcRect, moverRect;
 };

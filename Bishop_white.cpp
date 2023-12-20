@@ -4,6 +4,10 @@
 #include "Bishop_white.hpp"
 #include <string>
 using namespace std;
+    Bishop_white:: Bishop_white()
+    {
+
+    }
     void Bishop_white:: setFirstMove(bool first){}
     void Bishop_white:: initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) // Initializes the white bishop's position and appearance on the chessboard
     {   
@@ -63,5 +67,8 @@ using namespace std;
     {
         enabled = enabled_in;
     }
-    Bishop_white:: ~Bishop_white(){} // Destructor for the Bishop White class
+    Bishop_white:: ~Bishop_white()
+    {
+        // Destructor for the Bishop White class
+    } 
     

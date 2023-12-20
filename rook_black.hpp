@@ -12,6 +12,7 @@ class rook_black : public chess_piece// Defines the black rook class inheriting 
     bool enabled = true;// Indicates if the rook is enabled
     public:
     // Functions that override the base class methods
+    rook_black(); //Default constructor to cater ro3
     virtual void setFirstMove(bool first);
     virtual void initializer(SDL_Renderer* gRenderer,SDL_Texture* assets,int num) override;// Initializes the rook's position on the board
     virtual void move(int x,int y,int selected_x,int selected_y) override;
@@ -22,4 +23,7 @@ class rook_black : public chess_piece// Defines the black rook class inheriting 
     virtual bool get_enabled();
     virtual void set_enabled(bool enabled_in);
     virtual ~rook_black(); //Virtual Destructor
+    //Rule of three
+    rook_black(const rook_black& obj) = delete;
+    rook_black& operator = (const rook_black& obj) = delete; 
 };
